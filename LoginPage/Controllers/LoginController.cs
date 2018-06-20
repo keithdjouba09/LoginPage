@@ -13,5 +13,11 @@ namespace LoginPage.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Authorize()
+        {
+            return View();
+        }
     }
 }

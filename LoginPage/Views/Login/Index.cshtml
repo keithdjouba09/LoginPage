@@ -9,20 +9,26 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="~/bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <style>
-        #login-div{
-            position:absolute;
-                left: 40%;
-                top:40%;
-                border: 1px solid #333;
-                border-radius: 2px;
-                padding: 10px 10px;
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #333;
+            border-radius: 2px;
+            padding: 10px 10px;
         }
     </style>
 </head>
 <body>
-    <div id="login-div"> 
-        @using (Html.BeginForm(FormMethod.Post))
+    <div id="login-div">
+        @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
         {
             <table>
                 <tr>
@@ -39,10 +45,20 @@
                 </tr>
                 <tr>
                     <td>
+                        @Html.ValidationMessageFor(model => model.UserName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         @Html.LabelFor(model => model.password)
                     </td>
                     <td>
                         @Html.EditorFor(model => model.password)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.ValidationMessageFor(model => model.password)
                     </td>
                 </tr>
                 <tr>
@@ -55,5 +71,12 @@
             </table>
         }
     </div>
+    <script src="~/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"> </script>
 </body>
 </html>

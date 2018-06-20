@@ -17,8 +17,10 @@ namespace LoginPage.Models
     public partial class User
     {
         public int UserID { get; set; }
+        [Required(ErrorMessage ="This field is required")]
         public string UserName { get; set; }
         [DataType(DataType.Password)]
+        [Required(ErrorMessage = "This field is required")]
         public string password { get; set; }
     }
 }
