@@ -9,9 +9,51 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <style>
+        #login-div{
+            position:absolute;
+                left: 40%;
+                top:40%;
+                border: 1px solid #333;
+                border-radius: 2px;
+                padding: 10px 10px;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div id="login-div"> 
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    <td style="text-decoration: underline"> New App</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.UserName)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.UserName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.password)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.password)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="name" value="Login" />
+                        <input type="reset" name="name" value="cancel" />
+                    </td>
+                </tr>
+            </table>
+        }
     </div>
 </body>
 </html>
