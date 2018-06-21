@@ -22,5 +22,7 @@ namespace LoginPage.Models
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "This field is required")]
         public string password { get; set; }
+
+        public string LoginErrorMessage { get; set; }
     }
 }
